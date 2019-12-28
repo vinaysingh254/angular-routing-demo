@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -27,13 +27,14 @@ export class ServerService {
   }
 
   getServer(id: number) {
-    const server=this.servers.find((s) => {
+    const server = this.servers.find((s) => {
       return s.id === id;
     });
     return server;
-  
+
   }
-  updateServer(id: number, serverInfo: {name: string, status: string}) {
+
+  updateServer(id: number, serverInfo: { name: string, status: string }) {
     const server = this.servers.find(
       (s) => {
         return s.id === id;
@@ -44,5 +45,7 @@ export class ServerService {
       server.status = serverInfo.status;
     }
   }
-  constructor() { }
+
+  constructor() {
+  }
 }
